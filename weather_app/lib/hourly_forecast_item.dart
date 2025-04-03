@@ -8,6 +8,7 @@ class HourlyForecastItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double celsiusTemp = double.parse(temperature) - 272.15;
     return Card(
       elevation: 6,
       child: Container(
@@ -19,11 +20,14 @@ class HourlyForecastItem extends StatelessWidget {
             Text(
               time,
               style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
             ),
             const SizedBox(height: 8),
             Icon(icon, size: 32),
             const SizedBox(height: 8),
-            Text(temperature),
+            
+            Text('${celsiusTemp.toStringAsFixed(0)}°C'),
           ],
         ),
       ),
