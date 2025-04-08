@@ -1,0 +1,1 @@
+final openWeatherAPIKey = 'b4e6e470671af6382724b7059ebf2a0c';
